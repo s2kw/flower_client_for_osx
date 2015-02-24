@@ -1,0 +1,3 @@
+[submodule "GitRebaseFlower/GitRebaseFlower/Submodules/octokit.objc"]
+	path = GitRebaseFlower/GitRebaseFlower/Submodules/octokit.objc
+	url = git@github.com:octokit/octokit.objc.git
