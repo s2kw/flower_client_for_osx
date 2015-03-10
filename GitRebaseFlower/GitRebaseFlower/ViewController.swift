@@ -18,6 +18,9 @@ class ViewController: NSViewController {
         
         // Do any additional setup after loading the view.
         self.loadCommandView()
+     
+        var fm = NSFileManager();
+        NSLog( fm.currentDirectoryPath );
         
         
     }

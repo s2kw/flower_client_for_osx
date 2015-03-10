@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		934D7F151AAF21930025B59D /* GitCommandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D7F141AAF21930025B59D /* GitCommandModel.swift */; };
+		934D7F171AAF28510025B59D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D7F161AAF28510025B59D /* Config.swift */; };
+		934D7F191AAF2AC20025B59D /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D7F181AAF2AC20025B59D /* ConfigViewController.swift */; };
 		93A41DDB1A9C5D8600B31B95 /* LatestCommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A41DDA1A9C5D8600B31B95 /* LatestCommandViewController.swift */; };
 		93A41DDD1A9C780200B31B95 /* BranchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A41DDC1A9C780200B31B95 /* BranchesViewController.swift */; };
 		93CF38431A94AA3D005E0059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF38421A94AA3D005E0059 /* AppDelegate.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		934D7F141AAF21930025B59D /* GitCommandModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitCommandModel.swift; path = Models/GitCommandModel.swift; sourceTree = "<group>"; };
+		934D7F161AAF28510025B59D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Models/Config.swift; sourceTree = "<group>"; };
+		934D7F181AAF2AC20025B59D /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigViewController.swift; path = ViewControllers/ConfigViewController.swift; sourceTree = "<group>"; };
 		93A41DDA1A9C5D8600B31B95 /* LatestCommandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LatestCommandViewController.swift; path = ViewControllers/LatestCommandViewController.swift; sourceTree = "<group>"; };
 		93A41DDC1A9C780200B31B95 /* BranchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BranchesViewController.swift; path = ViewControllers/BranchesViewController.swift; sourceTree = "<group>"; };
 		93CF383D1A94AA3D005E0059 /* GitRebaseFlower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitRebaseFlower.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +135,8 @@
 				93CF38641A96F1CC005E0059 /* BranchModel.swift */,
 				93CF38621A96F151005E0059 /* AccountModel.swift */,
 				93CF386B1A9743CC005E0059 /* Track.swift */,
+				934D7F141AAF21930025B59D /* GitCommandModel.swift */,
+				934D7F161AAF28510025B59D /* Config.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 				93CF38661A96F21D005E0059 /* AccountListViewController.swift */,
 				93A41DDA1A9C5D8600B31B95 /* LatestCommandViewController.swift */,
 				93A41DDC1A9C780200B31B95 /* BranchesViewController.swift */,
+				934D7F181AAF2AC20025B59D /* ConfigViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -243,11 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				93CF38451A94AA3D005E0059 /* ViewController.swift in Sources */,
+				934D7F151AAF21930025B59D /* GitCommandModel.swift in Sources */,
 				93CF38431A94AA3D005E0059 /* AppDelegate.swift in Sources */,
+				934D7F191AAF2AC20025B59D /* ConfigViewController.swift in Sources */,
 				93CF38631A96F151005E0059 /* AccountModel.swift in Sources */,
 				93CF38671A96F21D005E0059 /* AccountListViewController.swift in Sources */,
 				93A41DDD1A9C780200B31B95 /* BranchesViewController.swift in Sources */,
 				93CF38651A96F1CC005E0059 /* BranchModel.swift in Sources */,
+				934D7F171AAF28510025B59D /* Config.swift in Sources */,
 				93A41DDB1A9C5D8600B31B95 /* LatestCommandViewController.swift in Sources */,
 				93CF386C1A9743CC005E0059 /* Track.swift in Sources */,
 			);

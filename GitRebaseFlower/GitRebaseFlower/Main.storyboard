@@ -32,17 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="900" height="800"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDc-jm-5VQ">
-                                <rect key="frame" x="20" y="550" width="440" height="84"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Aom-y2-QM7">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="A2f-9l-ZWB"/>
-                                </connections>
-                            </textField>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDD-o9-GYu">
                                 <rect key="frame" x="68" y="675" width="345" height="20"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="6Jv-3C-nVb"/>
@@ -70,6 +59,17 @@
                                     <action selector="mute:" target="eCg-tz-8XJ" id="73a-UX-HpW"/>
                                 </connections>
                             </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDc-jm-5VQ">
+                                <rect key="frame" x="20" y="327" width="440" height="84"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Aom-y2-QM7">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="A2f-9l-ZWB"/>
+                                </connections>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
