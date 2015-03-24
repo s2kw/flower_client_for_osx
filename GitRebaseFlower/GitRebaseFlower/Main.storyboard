@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qq5-1d-0dO">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qq5-1d-0dO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
     <scenes>
         <!--Window Controller-->
@@ -29,7 +29,7 @@
             <objects>
                 <viewController storyboardIdentifier="Main_" id="eCg-tz-8XJ" customClass="ViewController" customModule="GitRebaseFlower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="MvH-OK-Tat">
-                        <rect key="frame" x="0.0" y="0.0" width="900" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="545" height="800"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDD-o9-GYu">
@@ -40,23 +40,13 @@
                                 </connections>
                             </slider>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NIC-HH-Qjc">
-                                <rect key="frame" x="28" y="761" width="122" height="19"/>
+                                <rect key="frame" x="80" y="755" width="309" height="19"/>
                                 <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q4T-BK-LqF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="EuY-ke-LeD"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SqR-mh-lFf">
-                                <rect key="frame" x="22" y="714" width="82" height="32"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HrR-Ba-JP9">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="mute:" target="eCg-tz-8XJ" id="73a-UX-HpW"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDc-jm-5VQ">
@@ -70,6 +60,17 @@
                                     <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="A2f-9l-ZWB"/>
                                 </connections>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SqR-mh-lFf">
+                                <rect key="frame" x="89" y="708" width="306" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HrR-Ba-JP9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="mute:" target="eCg-tz-8XJ" id="73a-UX-HpW"/>
+                                    <segue destination="3Qc-Cb-slO" kind="sheet" id="5cN-l0-p7a"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -79,7 +80,7 @@
                 </viewController>
                 <customObject id="DlE-V7-s3k" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237" y="1213"/>
+            <point key="canvasLocation" x="59.5" y="1213"/>
         </scene>
         <!--Latest Command View Controller-->
         <scene sceneID="R2g-EH-dNC">
@@ -115,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="262" y="656.5"/>
         </scene>
-        <!--Split View Controller-->
+        <!--My Split View Controller-->
         <scene sceneID="jwi-eF-adt">
             <objects>
-                <splitViewController id="3Qc-Cb-slO" sceneMemberID="viewController">
+                <splitViewController id="3Qc-Cb-slO" customClass="MySplitViewController" customModule="GitRebaseFlower" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="Dge-VE-3t8"/>
                         <splitViewItem id="Zty-Mh-kJ2"/>
@@ -134,44 +135,32 @@
                 </splitViewController>
                 <customObject id="Rrr-ng-ZRo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="1075"/>
+            <point key="canvasLocation" x="694" y="1197"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Vr7-q7-sz6">
             <objects>
                 <viewController id="NWb-Zo-U9I" sceneMemberID="viewController">
                     <view key="view" id="D9V-Uk-w4q">
-                        <rect key="frame" x="0.0" y="0.0" width="900" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4i-lX-FZc">
-                                <rect key="frame" x="20" y="32" width="326" height="248"/>
-                                <clipView key="contentView" misplaced="YES" id="JnE-On-7qb">
-                                    <rect key="frame" x="1" y="1" width="248" height="158"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <collectionView id="mxw-an-I9w">
-                                            <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </collectionView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="N38-dN-Yzb">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="g8l-v6-nm0">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5du-4H-KoO">
+                                <rect key="frame" x="14" y="252" width="145" height="32"/>
+                                <buttonCell key="cell" type="push" title="lower" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fe4-09-4Gu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="mute:" target="eCg-tz-8XJ" id="XYz-Af-5r5"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                 </viewController>
                 <customObject id="MpH-Kk-f0G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="1674"/>
+            <point key="canvasLocation" x="1160" y="1425"/>
         </scene>
         <!--Collection View Item-->
         <scene sceneID="cfI-W3-fTK">
@@ -190,20 +179,32 @@
                 </collectionViewItem>
                 <customObject id="YFs-pb-8Ls" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="1590"/>
+            <point key="canvasLocation" x="1398" y="1367"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7XR-yM-uPz">
             <objects>
                 <viewController id="QDF-7J-dxW" sceneMemberID="viewController">
                     <view key="view" id="Pno-uy-oUP">
-                        <rect key="frame" x="0.0" y="0.0" width="900" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jec-1F-EYK">
+                                <rect key="frame" x="44" y="239" width="145" height="32"/>
+                                <buttonCell key="cell" type="push" title="upperside" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Ig-Tt-cID">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="mute:" target="eCg-tz-8XJ" id="6kN-Yz-t31"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="Zuo-N8-ouZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="1170"/>
+            <point key="canvasLocation" x="1160" y="1023"/>
         </scene>
     </scenes>
 </document>
