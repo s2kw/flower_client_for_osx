@@ -28,9 +28,14 @@ class Config: NSObject {
         
         let config = NSUserDefaults.standardUserDefaults();
         
-        self.repo       = config.objectForKey( self.repo_key ) as NSString;
-        self.gituser    = config.objectForKey( self.gituser_key ) as NSString;
-        self.gitpass    = config.objectForKey( self.gitpass_key ) as NSString;
-        self.workingDir = config.objectForKey( self.workingDir_key ) as NSString;
+        self.repo       = config.objectForKey( self.repo_key ) as? String;
+
+        if( self.repo == "" ){
+            NSLog("self.repo is null")
+        }
+
+        self.gituser    = config.objectForKey( self.gituser_key ) as? String;
+        self.gitpass    = config.objectForKey( self.gitpass_key ) as? String;
+        self.workingDir = config.objectForKey( self.workingDir_key ) as? String;
     }
 }

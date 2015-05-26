@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qq5-1d-0dO">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qq5-1d-0dO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Window Controller-->
@@ -22,7 +22,7 @@
                 </windowController>
                 <customObject id="ZTe-9M-sCu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487" y="278.5"/>
+            <point key="canvasLocation" x="687" y="130"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ple-dO-LJe">
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDc-jm-5VQ">
-                                <rect key="frame" x="20" y="327" width="440" height="84"/>
+                                <rect key="frame" x="20" y="327" width="505" height="84"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Aom-y2-QM7">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -67,13 +67,13 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="mute:" target="eCg-tz-8XJ" id="73a-UX-HpW"/>
-                                    <segue destination="3Qc-Cb-slO" kind="sheet" id="5cN-l0-p7a"/>
+                                    <segue destination="3Qc-Cb-slO" kind="show" id="W2H-5F-SCT"/>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="button" destination="SqR-mh-lFf" id="Vfc-50-Rvw"/>
                         <outlet property="slider" destination="iDD-o9-GYu" id="CPa-rv-BQw"/>
                         <outlet property="textField" destination="jDc-jm-5VQ" id="l6x-NC-2TP"/>
                     </connections>
@@ -109,12 +109,25 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="commandField" destination="3gv-bw-Sl8" id="as6-o3-u43"/>
+                        <outlet property="commandField" destination="3gv-bw-Sl8" id="LU0-fx-DsI"/>
                     </connections>
                 </viewController>
                 <customObject id="4Gq-75-we3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="656.5"/>
+            <point key="canvasLocation" x="-67" y="1802.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PVk-Lt-ZuF">
+            <objects>
+                <viewController id="j0h-jK-EVB" sceneMemberID="viewController">
+                    <view key="view" id="4Bf-iM-o8C">
+                        <rect key="frame" x="0.0" y="0.0" width="680" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="24q-7K-fOl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-286" y="541"/>
         </scene>
         <!--My Split View Controller-->
         <scene sceneID="jwi-eF-adt">
@@ -151,9 +164,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="mute:" target="eCg-tz-8XJ" id="XYz-Af-5r5"/>
-                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -179,7 +189,7 @@
                 </collectionViewItem>
                 <customObject id="YFs-pb-8Ls" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="1367"/>
+            <point key="canvasLocation" x="1401" y="1144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7XR-yM-uPz">
@@ -195,9 +205,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="mute:" target="eCg-tz-8XJ" id="6kN-Yz-t31"/>
-                                </connections>
                             </button>
                         </subviews>
                     </view>

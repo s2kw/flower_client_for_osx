@@ -8,22 +8,26 @@
 
 import AppKit
 import Foundation
+import Cocoa
 
 class AccountListViewController: NSViewController, NSCollectionViewDelegate {
     
     var hoge: BranchModel!
     var hogeArray: NSMutableArray!
     
+    @IBOutlet weak var button: NSButton!
+
     @IBOutlet weak var hogeCollectionView: NSCollectionView!
+
     @IBOutlet var arrayController: NSArrayController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let itemPrototype = self.storyboard?.instantiateControllerWithIdentifier("collectionViewItem")
-            as NSCollectionViewItem
+            as! NSCollectionViewItem
         hogeCollectionView.itemPrototype = itemPrototype
         hoge = BranchModel()
         hogeArray = NSMutableArray(array:[hoge, hoge, hoge])
-        hogeCollectionView.content = hogeArray
+        hogeCollectionView.content = hogeArray as [AnyObject]
     }
 }

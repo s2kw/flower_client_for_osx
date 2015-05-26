@@ -13,9 +13,6 @@ class LatestCommandViewController: NSViewController {
     
     @IBOutlet weak var commandField: NSTextField!
     
-    override func viewDidLoad() {
-    }
-    
     func updateLatestCommand( _command :String ){
         self.commandField.stringValue = _command;
     }
