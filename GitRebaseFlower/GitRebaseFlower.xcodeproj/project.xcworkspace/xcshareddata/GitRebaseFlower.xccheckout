@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DC42357E-4C04-47D7-B17F-A7C91E677894</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GitRebaseFlower</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F8DB63626A635A429F400B447D87DAA87A75489A</key>
+		<string>https://github.com/s2kw/flower_client_for_osx.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GitRebaseFlower/GitRebaseFlower.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F8DB63626A635A429F400B447D87DAA87A75489A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/s2kw/flower_client_for_osx.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F8DB63626A635A429F400B447D87DAA87A75489A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F8DB63626A635A429F400B447D87DAA87A75489A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>flower_client_for_osx</string>
+		</dict>
+	</array>
+</dict>
+</plist>

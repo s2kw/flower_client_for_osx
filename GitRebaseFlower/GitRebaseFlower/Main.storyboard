@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qq5-1d-0dO">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qq5-1d-0dO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Window Controller-->
@@ -10,9 +10,11 @@
                 <windowController id="Qq5-1d-0dO" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Iat-Ql-RUU">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="294" y="372" width="480" height="270"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="372" width="900" height="800"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
+                        <value key="minSize" type="size" width="900" height="800"/>
+                        <value key="maxSize" type="size" width="900" height="1200"/>
                     </window>
                     <connections>
                         <segue destination="eCg-tz-8XJ" kind="relationship" relationship="window.shadowedContentViewController" id="E7U-pD-VkI"/>
@@ -20,18 +22,35 @@
                 </windowController>
                 <customObject id="ZTe-9M-sCu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="297"/>
+            <point key="canvasLocation" x="687" y="130"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ple-dO-LJe">
             <objects>
                 <viewController storyboardIdentifier="Main_" id="eCg-tz-8XJ" customClass="ViewController" customModule="GitRebaseFlower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="MvH-OK-Tat">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="545" height="800"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDD-o9-GYu">
+                                <rect key="frame" x="68" y="675" width="345" height="20"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="6Jv-3C-nVb"/>
+                                <connections>
+                                    <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="Ugh-ez-GMu"/>
+                                </connections>
+                            </slider>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NIC-HH-Qjc">
+                                <rect key="frame" x="80" y="755" width="309" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q4T-BK-LqF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="cellTitle"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="EuY-ke-LeD"/>
+                                </connections>
+                            </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDc-jm-5VQ">
-                                <rect key="frame" x="20" y="20" width="440" height="84"/>
+                                <rect key="frame" x="20" y="327" width="505" height="84"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Aom-y2-QM7">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -41,43 +60,158 @@
                                     <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="A2f-9l-ZWB"/>
                                 </connections>
                             </textField>
-                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDD-o9-GYu">
-                                <rect key="frame" x="68" y="145" width="345" height="20"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="6Jv-3C-nVb"/>
-                                <connections>
-                                    <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="Ugh-ez-GMu"/>
-                                </connections>
-                            </slider>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NIC-HH-Qjc">
-                                <rect key="frame" x="70" y="214" width="122" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q4T-BK-LqF">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="takeFloatValueForVolumeFrom:" target="eCg-tz-8XJ" id="EuY-ke-LeD"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SqR-mh-lFf">
-                                <rect key="frame" x="312" y="205" width="82" height="32"/>
+                                <rect key="frame" x="89" y="708" width="306" height="32"/>
                                 <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HrR-Ba-JP9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="mute:" target="eCg-tz-8XJ" id="73a-UX-HpW"/>
+                                    <segue destination="3Qc-Cb-slO" kind="show" id="W2H-5F-SCT"/>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="button" destination="SqR-mh-lFf" id="Vfc-50-Rvw"/>
                         <outlet property="slider" destination="iDD-o9-GYu" id="CPa-rv-BQw"/>
                         <outlet property="textField" destination="jDc-jm-5VQ" id="l6x-NC-2TP"/>
                     </connections>
                 </viewController>
                 <customObject id="DlE-V7-s3k" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="770"/>
+            <point key="canvasLocation" x="59.5" y="1213"/>
+        </scene>
+        <!--Latest Command View Controller-->
+        <scene sceneID="R2g-EH-dNC">
+            <objects>
+                <viewController identifier="LatestCommandViewController" storyboardIdentifier="LatestCommandViewController" id="Oe6-nm-FSF" customClass="LatestCommandViewController" customModule="GitRebaseFlower" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="BqY-WT-nRm">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="43"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgt-pp-626">
+                                <rect key="frame" x="18" y="14" width="114" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Latest Command:" id="82M-vW-LSC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gv-bw-Sl8">
+                                <rect key="frame" x="138" y="11" width="292" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0vA-Zb-UbF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="commandField" destination="3gv-bw-Sl8" id="LU0-fx-DsI"/>
+                    </connections>
+                </viewController>
+                <customObject id="4Gq-75-we3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-67" y="1802.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PVk-Lt-ZuF">
+            <objects>
+                <viewController id="j0h-jK-EVB" sceneMemberID="viewController">
+                    <view key="view" id="4Bf-iM-o8C">
+                        <rect key="frame" x="0.0" y="0.0" width="680" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="24q-7K-fOl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-286" y="541"/>
+        </scene>
+        <!--My Split View Controller-->
+        <scene sceneID="jwi-eF-adt">
+            <objects>
+                <splitViewController id="3Qc-Cb-slO" customClass="MySplitViewController" customModule="GitRebaseFlower" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="Dge-VE-3t8"/>
+                        <splitViewItem id="Zty-Mh-kJ2"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" id="hi0-xV-d4w">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="648"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="NWb-Zo-U9I" kind="relationship" relationship="splitItems" id="BJv-aH-5Mc"/>
+                        <segue destination="QDF-7J-dxW" kind="relationship" relationship="splitItems" id="JrE-38-aIH"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="Rrr-ng-ZRo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="1197"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vr7-q7-sz6">
+            <objects>
+                <viewController id="NWb-Zo-U9I" sceneMemberID="viewController">
+                    <view key="view" id="D9V-Uk-w4q">
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5du-4H-KoO">
+                                <rect key="frame" x="14" y="252" width="145" height="32"/>
+                                <buttonCell key="cell" type="push" title="lower" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fe4-09-4Gu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="MpH-Kk-f0G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="1425"/>
+        </scene>
+        <!--Collection View Item-->
+        <scene sceneID="cfI-W3-fTK">
+            <objects>
+                <collectionViewItem id="5Qc-hV-Hwo" sceneMemberID="viewController">
+                    <view key="view" id="54T-Gy-xCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MNj-VI-snW">
+                                <rect key="frame" x="20" y="20" width="92" height="92"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="IM6-eE-alf"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                </collectionViewItem>
+                <customObject id="YFs-pb-8Ls" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="1144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7XR-yM-uPz">
+            <objects>
+                <viewController id="QDF-7J-dxW" sceneMemberID="viewController">
+                    <view key="view" id="Pno-uy-oUP">
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jec-1F-EYK">
+                                <rect key="frame" x="44" y="239" width="145" height="32"/>
+                                <buttonCell key="cell" type="push" title="upperside" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Ig-Tt-cID">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="Zuo-N8-ouZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="1023"/>
         </scene>
     </scenes>
 </document>

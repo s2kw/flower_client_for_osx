@@ -15,8 +15,13 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NSLog("View Did Load");
         // Do any additional setup after loading the view.
+        self.loadCommandView()
+        self.textField.stringValue = " default ";
+        var fm = NSFileManager();
+        NSLog( fm.currentDirectoryPath );
+
     }
     
     override var representedObject: AnyObject? {
@@ -24,19 +29,20 @@ class ViewController: NSViewController {
             // Update the view, if already loaded.
         }
     }
-    
     @IBOutlet weak var textField: NSTextField!
     @IBOutlet weak var slider: NSSlider!
     
     @IBAction func mute(sender: AnyObject) {
+        NSLog( "mute!" );
         track.volume = 0.0
-        //updateUserInterface()
-        shellScript()
+        updateUserInterface()
+        //textField.stringValue = shellScript()
     }
     
     
     @IBAction func takeFloatValueForVolumeFrom(sender: AnyObject) {
-        if sender as NSObject == slider
+        NSLog(" push!!! " )
+        if sender as! NSObject == slider
         {
             track.volume = slider.floatValue
         }
@@ -44,38 +50,57 @@ class ViewController: NSViewController {
         {
             track.volume = textField.floatValue
         }
-        updateUserInterface()
-        // NSLog(" push!!! ")
+        //updateUserInterface()
     }
+
+    var commandViewController : LatestCommandViewController?;
     
     func shellScript() -> String {
         let task = NSTask()
         task.launchPath = "/usr/bin/git"
-        task.currentDirectoryPath = "/workspace/repos/caravan-heroes"
+        task.currentDirectoryPath = "/workspace/repos/flower_client_for_osx"
         task.arguments = ["branch", "-a"]
         let pipe = NSPipe()
         task.standardOutput = pipe
         task.launch()
         
+        var command: String = "";
+        for( var i = 0; task.arguments.count > i; i++ ){
+            let s: String = command + (task.arguments[ i ] as! String) + " ";
+            command = s;
+            NSLog( String( i ) + ":" + s );
+        }
+        self.commandViewController?.updateLatestCommand( command );
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        let output: String = NSString( data: data, encoding: NSUTF8StringEncoding )!
+        let output: NSString = NSString( data: data, encoding: NSUTF8StringEncoding )!
         
         let lines = output.componentsSeparatedByString("\n")
         for i in 0 ..< lines.count {
-            let line = lines[i]
-            let components = lines[i].stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let line: String = lines[i] as! String
+            let components: String = line.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             let oneLine = String( components )
             var branch :BranchModel = BranchModel()
             branch.name = ""
             branch.author = ""
-            branch.current = self.isBranchNameHasAsterisk()
+            branch.current = self.isBranchNameHasAsterisk( oneLine )
             print( String( components ) + "\n" )
         }
-        return output
+        return output as String
         // assert(output == "first-argument second-argument\n")
     }
-    func isBranchNameHasAsterisk -> Bool (String :_branchName){
+    func isBranchNameHasAsterisk( _branchName : String ) -> Bool{
+        return true
+    }
     
+    func loadCommandView(){
+        self.commandViewController = self.storyboard?.instantiateControllerWithIdentifier("LatestCommandViewController") as? LatestCommandViewController
+        let positioned = NSWindowOrderingMode.Below
+        let otherview: NSView  = self.view
+        self.view.addSubview(
+            self.commandViewController!.view,
+            positioned: positioned,
+            relativeTo: otherview )
+        self.commandViewController?.updateLatestCommand( " default " );
     }
     
     func updateUserInterface()
