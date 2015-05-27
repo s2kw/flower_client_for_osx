@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		933A1B771B15B39200D5CD85 /* DefaultProject.plist in Resources */ = {isa = PBXBuildFile; fileRef = 933A1B761B15B39200D5CD85 /* DefaultProject.plist */; };
 		934D7F151AAF21930025B59D /* GitCommandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D7F141AAF21930025B59D /* GitCommandModel.swift */; };
 		934D7F171AAF28510025B59D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D7F161AAF28510025B59D /* Config.swift */; };
 		934D7F191AAF2AC20025B59D /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D7F181AAF2AC20025B59D /* ConfigViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		933A1B761B15B39200D5CD85 /* DefaultProject.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultProject.plist; sourceTree = "<group>"; };
 		934D7F141AAF21930025B59D /* GitCommandModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitCommandModel.swift; path = Models/GitCommandModel.swift; sourceTree = "<group>"; };
 		934D7F161AAF28510025B59D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Models/Config.swift; sourceTree = "<group>"; };
 		934D7F181AAF2AC20025B59D /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigViewController.swift; path = ViewControllers/ConfigViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		937BF1021B15AD4100C7DFA7 /* DataFiles */ = {
+			isa = PBXGroup;
+			children = (
+				933A1B761B15B39200D5CD85 /* DefaultProject.plist */,
+			);
+			name = DataFiles;
+			sourceTree = "<group>";
+		};
 		93CF38341A94AA3D005E0059 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 		93CF383F1A94AA3D005E0059 /* GitRebaseFlower */ = {
 			isa = PBXGroup;
 			children = (
+				937BF1021B15AD4100C7DFA7 /* DataFiles */,
 				93CF38681A96F226005E0059 /* ViewController */,
 				93CF385F1A96F0A7005E0059 /* Model */,
 				93CF38421A94AA3D005E0059 /* AppDelegate.swift */,
@@ -237,6 +248,7 @@
 			files = (
 				93CF38471A94AA3D005E0059 /* Images.xcassets in Resources */,
 				93CF386A1A972534005E0059 /* Main.storyboard in Resources */,
+				933A1B771B15B39200D5CD85 /* DefaultProject.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

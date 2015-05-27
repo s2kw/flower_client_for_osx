@@ -15,14 +15,82 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSLog("View Did Load");
+        println("View Did Load");
         // Do any additional setup after loading the view.
         self.loadCommandView()
-        self.textField.stringValue = " default ";
+        
+        // 設定ファイルの読み込み
+
+        //var rawStandards: NSDictionary = NSDictionary()?
+        let name: String = "test"
+        let ofType: String = "plist"
+        if let path = NSBundle.mainBundle().pathForResource( name, ofType: ofType ){
+            println( "currentWorkingPath : " + path )
+            //rawStandards = NSDictionary( contentsOfFile: path )?
+        }else{
+            println("file could not found")
+            // 設定ファイルが無かった場合
+            // projectの作成
+            self.createProjectFile( name )
+            
+            
+        }
+        
+        
+        // 設定ファイルがあったけどパスが無かった
+            // workspaceの決定
+        
+        
+        // 設定ファイルのパスに.gitが無かった
+            // git clone
+        
+        
+        
+        //self.textField.stringValue = " default ";
         var fm = NSFileManager();
-        NSLog( fm.currentDirectoryPath );
+        println( "file manager path" + fm.currentDirectoryPath );
 
     }
+    internal var currentProjectInfo:NSDictionary!
+    func createProjectFile( _projectName : String ){
+        println("create project file as " + _projectName )
+        let fileManager = NSFileManager.defaultManager()
+        
+        if var defaultFile = loadDefaultProjectFile() {
+            defaultFile.setValue( _projectName, forKey:"ProjectName")
+            if let saveTargetPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]{
+                println("0 : " + saveTargetPaths[0])
+                let dir = saveTargetPaths[0].stringByAppendingPathComponent("GitRevaseFlower");
+
+                var err: NSErrorPointer = nil
+                if fileManager.createDirectoryAtPath( dir , withIntermediateDirectories: false,attributes: nil, error: err ) {
+                    println( "created : " + dir)
+                }else{
+                    println( "failed to create dir or directory is already exists.")
+                }
+
+                let projectFilePath = dir.stringByAppendingPathComponent( _projectName )
+                if let projectFilePathAndExtention = projectFilePath.stringByAppendingPathExtension( "plist" ){
+                    println("new project")
+                    println(projectFilePathAndExtention)
+                    defaultFile.writeToFile( projectFilePathAndExtention, atomically: false )
+                }
+            }else{
+                println("project file could not create : " + _projectName )
+            }
+        }
+    }
+    func loadDefaultProjectFile() -> NSDictionary! {
+        if let path = NSBundle.mainBundle().pathForResource( "DefaultProject", ofType: "plist" ){
+            println( "default file in there :" + path )
+            let defaultFile = NSDictionary( contentsOfFile: path )
+            return defaultFile;
+        }else{
+            println("default file could not found");
+        }
+        return nil;
+    }
+    
     
     override var representedObject: AnyObject? {
         didSet {
@@ -32,8 +100,11 @@ class ViewController: NSViewController {
     @IBOutlet weak var textField: NSTextField!
     @IBOutlet weak var slider: NSSlider!
     
+    @IBOutlet weak var button: NSButton!
+    
+    
     @IBAction func mute(sender: AnyObject) {
-        NSLog( "mute!" );
+        println( "mute!" );
         track.volume = 0.0
         updateUserInterface()
         //textField.stringValue = shellScript()

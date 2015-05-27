@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ProjectName</key>
+	<string>defaultProjectName</string>
+	<key>OwnerName</key>
+	<string>defaultOwnerName</string>
+	<key>GitPath</key>
+	<string>https://github.com/_username_/_projectname_.git</string>
+	<key>WorkspacePath</key>
+	<string>/workspace/</string>
+</dict>
+</plist>
