@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93210E5E1B15DD4800EB9CA1 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93210E5D1B15DD4800EB9CA1 /* ProjectModel.swift */; };
 		933A1B771B15B39200D5CD85 /* DefaultProject.plist in Resources */ = {isa = PBXBuildFile; fileRef = 933A1B761B15B39200D5CD85 /* DefaultProject.plist */; };
 		934D7F151AAF21930025B59D /* GitCommandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D7F141AAF21930025B59D /* GitCommandModel.swift */; };
 		934D7F171AAF28510025B59D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D7F161AAF28510025B59D /* Config.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93210E5D1B15DD4800EB9CA1 /* ProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectModel.swift; path = Models/ProjectModel.swift; sourceTree = "<group>"; };
 		933A1B761B15B39200D5CD85 /* DefaultProject.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultProject.plist; sourceTree = "<group>"; };
 		934D7F141AAF21930025B59D /* GitCommandModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitCommandModel.swift; path = Models/GitCommandModel.swift; sourceTree = "<group>"; };
 		934D7F161AAF28510025B59D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Models/Config.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				93CF386B1A9743CC005E0059 /* Track.swift */,
 				934D7F141AAF21930025B59D /* GitCommandModel.swift */,
 				934D7F161AAF28510025B59D /* Config.swift */,
+				93210E5D1B15DD4800EB9CA1 /* ProjectModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				93CF38431A94AA3D005E0059 /* AppDelegate.swift in Sources */,
 				934D7F191AAF2AC20025B59D /* ConfigViewController.swift in Sources */,
 				93CF38631A96F151005E0059 /* AccountModel.swift in Sources */,
+				93210E5E1B15DD4800EB9CA1 /* ProjectModel.swift in Sources */,
 				93CF38671A96F21D005E0059 /* AccountListViewController.swift in Sources */,
 				93A41DDD1A9C780200B31B95 /* BranchesViewController.swift in Sources */,
 				93CF38651A96F1CC005E0059 /* BranchModel.swift in Sources */,

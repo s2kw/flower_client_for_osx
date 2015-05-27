@@ -24,17 +24,24 @@ class ViewController: NSViewController {
         //var rawStandards: NSDictionary = NSDictionary()?
         let name: String = "test"
         let ofType: String = "plist"
-        if let path = NSBundle.mainBundle().pathForResource( name, ofType: ofType ){
-            println( "currentWorkingPath : " + path )
-            //rawStandards = NSDictionary( contentsOfFile: path )?
-        }else{
-            println("file could not found")
-            // 設定ファイルが無かった場合
-            // projectの作成
-            self.createProjectFile( name )
-            
-            
-        }
+//        if let path = NSBundle.mainBundle().pathForResource( name, ofType: ofType ){
+//            println( "currentWorkingPath : " + path )
+//            //rawStandards = NSDictionary( contentsOfFile: path )?
+//        }else{
+//            println("file could not found")
+//            // 設定ファイルが無かった場合
+//            // projectの作成
+//            self.createProjectFile( name )
+//            
+//            
+//        }
+
+        ProjectModel.Instance.CreateNewProjectFile("aaa");
+        ProjectModel.Instance.CreateNewProjectFile("bbb");
+        ProjectModel.Instance.CreateNewProjectFile("ccc");
+        ProjectModel.Instance.CreateNewProjectFile("ddd");
+        ProjectModel.Instance.CreateNewProjectFile("eee");
+        ProjectModel.Instance.ReqruiteAllProjects();
         
         
         // 設定ファイルがあったけどパスが無かった
