@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class ProjectModel{
+class ProjectModel:NSObject{
     // signleton
     class var Instance:ProjectModel{
         struct Static{
@@ -15,10 +15,11 @@ class ProjectModel{
         }
         return Static.instance;
     }
-    init(){
-        self.currentProject = NSDictionary.new();
+    required override init(){
+        self.currentProject = NSDictionary.new()
+        super.init()
     }
-    var currentProject: NSDictionary;
+    internal var currentProject: NSDictionary;
     // constant data
     private struct const{
         static var projectFileName:String = "DefaultProject"
@@ -107,13 +108,46 @@ class ProjectModel{
         return true;
     }
     
+    func SetAsCurrentProject( _projectName : String ) -> Bool{
+        if let loadedProject = self.LoadProjectFile( _projectName ){
+            self.currentProject = loadedProject;
+            return true;
+        }
+        return false;
+    }
+    
+    func GetCurrentWorkspace() -> String{
+       return self.currentProject[ ProjectFileMember.WorkspacePath.ToString() ] as! String
+    }
+    
+    func SetWorkspace( _path :String ) -> Bool{
+        let fileManager = NSFileManager.defaultManager()
+        var err: NSErrorPointer = nil
+        var b = ObjCBool(true)
+        if fileManager.fileExistsAtPath(_path, isDirectory: &b ){
+            println( _path + ":true" )
+            if( b ){
+                if self.currentProject.objectForKey( ProjectFileMember.WorkspacePath.ToString() ) != nil {
+                    self.currentProject.setValue( _path, forKey: ProjectFileMember.WorkspacePath.ToString() )
+                    self.SaveCurrentProjectFile()
+                    return true;
+                }
+            }
+        }
+        return false
+    }
+    
+    func GetCurrentProjectName() -> String{
+       return self.currentProject[ ProjectFileMember.ProjectName.ToString() ] as! String
+    }
+    
     // 全てのプロジェクトファイルを取得
     func ReqruiteAllProjects() -> [NSDictionary]!{
         let appDir = self.GetApplicationDataStoreDirectory()
         let fileManager = NSFileManager.defaultManager()
         var err: NSErrorPointer = nil
-        var array:[NSDictionary] = [NSDictionary]()
         if let files = fileManager.contentsOfDirectoryAtPath( appDir, error: err ){
+            var array:[NSDictionary] = [NSDictionary]()
             for f in files{
                 var d = self.LoadProjectFile( f as! String )
                 if ( d.objectForKey( ProjectFileMember.ProjectName.ToString() ) != nil ){
@@ -128,17 +162,22 @@ class ProjectModel{
                 
                 array.append( d )
             }
+            return array;
         }
-        return array
+        return nil
     }
 
-    func LoadProjectFile( name: String ) -> NSDictionary {
+    func LoadProjectFile( name: String ) -> NSDictionary! {
         let appDir = self.GetApplicationDataStoreDirectory()
         let fullPath = appDir.stringByAppendingPathComponent( name )
         if let projectFile = NSDictionary( contentsOfFile: (fullPath as String?)! ) {
             return projectFile;
         }
-        var d = NSDictionary.new()
-        return d
+        return nil
+    }
+    func SaveCurrentProjectFile() -> Bool {
+        let d = self.currentProject
+        let path = self.GetCurrentWorkspace().stringByAppendingPathComponent( self.GetCurrentProjectName() )
+        return d.writeToFile( path , atomically: false )
     }
 }

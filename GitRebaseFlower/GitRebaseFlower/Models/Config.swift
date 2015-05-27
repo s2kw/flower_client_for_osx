@@ -37,5 +37,42 @@ class Config: NSObject {
         self.gituser    = config.objectForKey( self.gituser_key ) as? String;
         self.gitpass    = config.objectForKey( self.gitpass_key ) as? String;
         self.workingDir = config.objectForKey( self.workingDir_key ) as? String;
+
+        super.init()
+
     }
+    
+    func Serialize(){
+        //var data: NSDate = NSData.new()
+        var array: NSMutableArray = NSMutableArray.new()
+        array.addObject( self.gituser! )
+        array.addObject( self.gitpass! )
+        
+ //       let appDel: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate
+//        let memoContext: NSManagedObjectContext = appDel.managedObjectContext!
+//        let CoreDataInterface: NSEntityDescription! = NSEntityDescription.entityForName("CoreDataInterface", inManagedObjectContext: memoContext)
+    }
+
+    var managedObjectContext:CoreDataInterface?
+    
+    func saveContext () {
+        var error: NSError? = nil
+        let moc = self.managedObjectContext
+        if moc == nil {
+            return
+        }
+//        if !managedObjectContext.hasChanges {
+//            return
+//        }
+//        if managedObjectContext.save(&amp;error) {
+//            return
+//        }
+                
+        println("Error saving context: \(error?.localizedDescription)\n\(error?.userInfo)")
+        abort()
+    }
+    
+    
+
+
 }
