@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DC42357E-4C04-47D7-B17F-A7C91E677894</string>
 	<key>IDESourceControlProjectName</key>
-	<string>GitRebaseFlower</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F8DB63626A635A429F400B447D87DAA87A75489A</key>
 		<string>https://github.com/s2kw/flower_client_for_osx.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GitRebaseFlower/GitRebaseFlower.xcodeproj</string>
+	<string>GitRebaseFlower/GitRebaseFlower.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F8DB63626A635A429F400B447D87DAA87A75489A</key>
